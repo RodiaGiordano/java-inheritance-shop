@@ -11,7 +11,7 @@ public class BankAccount{
     BankAccount(String newName){
         codeBank = randomNumber();
         name = newName;
-        balance = 110;
+        balance = 0;
     }
 
     public int getCodeBank() {
