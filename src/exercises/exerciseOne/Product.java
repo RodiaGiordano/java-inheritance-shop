@@ -38,7 +38,17 @@ public class Product {
         return vat;
     }
 
+    public void setName(String newName){
+        name = newName;
+    }
 
+    public void setPrice(float newPrice){
+        price = newPrice > 0 ? newPrice : price;
+    }
+
+    public void setVat(int newVat){
+        vat = newVat > 0 ? newVat : 22;
+    }
 
     @Override
     public String toString(){
