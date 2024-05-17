@@ -1,5 +1,7 @@
 package exercises.exercisesTwo;
 
+// problemi con la classe BigDecimal e nell valore 0.01 nell'if del prelievo
+
 import exercises.RandomNumb;
 
 import java.math.BigDecimal;
@@ -35,13 +37,19 @@ public class BankAccount{
     }
 
     public String getBalance(boolean format){
-        return getBalance() + "€";
+        String balance = Double.toString(getBalance());
+        int dotIndex = balance.indexOf(".");
+
+        if(balance.substring(dotIndex).length() > 2) {
+            return getBalance() + "€";
+        }else{
+            return getBalance() + "0€";
+        }
     }
 
     public boolean withdrawal(double withdrawal){
-
         if(withdrawal <= balance){
-           balance -= checkAmmount(withdrawal);
+           balance -= withdrawal;
            return true;
         }else{
             return false;
@@ -50,18 +58,19 @@ public class BankAccount{
 
     public boolean deposit(double deposit){
         if(deposit > 0) {
-            balance += checkAmmount(deposit);
+            balance += deposit;
             return true;
         }else{
             return false;
         }
     }
 
-    private double checkAmmount(double ammount){
+ /*  NON sono riuscito ad implementarlo correttamente
+  private double checkAmmount(double ammount){
         BigDecimal ammountValid = new BigDecimal(ammount).setScale(2, RoundingMode.HALF_UP);
         return ammountValid.doubleValue();
     }
-
+*/
 
 
     @Override
