@@ -2,7 +2,8 @@ package exercises.exercisesTwo;
 
 import exercises.RandomNumb;
 
-import java.util.Random;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class BankAccount{
 
@@ -37,9 +38,9 @@ public class BankAccount{
         return getBalance() + "€";
     }
 
-    public boolean withDrawal(double withDrawal){
-        if(withDrawal <= balance){
-           balance -= withDrawal;
+    public boolean withdrawal(double withdrawal){
+        if(withdrawal <= balance){
+           balance -= withdrawal;
            return true;
         }else{
             return false;
@@ -48,6 +49,8 @@ public class BankAccount{
 
     public boolean deposit(double deposit){
         if(deposit > 0) {
+        BigDecimal depositValid = new BigDecimal(deposit).setScale(2, RoundingMode.HALF_UP);
+        deposit = depositValid.doubleValue();
             balance += deposit;
             return true;
         }else{

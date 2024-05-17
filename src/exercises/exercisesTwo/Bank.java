@@ -1,9 +1,17 @@
 package exercises.exercisesTwo;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class Bank {
     public static void main(String[] args){
+
+/*
+        double price = 10.335;
+        BigDecimal bigDecimal = new BigDecimal(price).setScale(2, RoundingMode.HALF_UP);
+        System.out.println(bigDecimal);
+ */
 
         Scanner scanner = new Scanner(System.in);
 
@@ -12,7 +20,6 @@ public class Bank {
 
         BankAccount account = new BankAccount(name);
 
-        System.out.println(account.getCodeBank());
         boolean choice = true;
         String result;
         do{
@@ -27,7 +34,7 @@ public class Bank {
                 case "prelievo":
                     System.out.println("quanto vuoi prelevare?");
                     double ammountW = Double.parseDouble(scanner.nextLine());
-                    if(account.withDrawal(ammountW)){
+                    if(account.withdrawal(ammountW)){
                     System.out.println("Prelievo effettuato, saldo attuale: " + account.getBalance(true));
                     }else{
                         System.out.println("Non ci sono abbastanza fondi");
@@ -50,5 +57,6 @@ public class Bank {
 
         }while(choice);
         scanner.close();
+
     }
 }
