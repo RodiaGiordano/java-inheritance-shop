@@ -1,5 +1,7 @@
 package exercises.exerciseOne;
 
+import exercises.RandomNumb;
+
 import java.util.Random;
 
 public class Product {
@@ -10,7 +12,7 @@ public class Product {
     private int vat;
 
     Product(String name, float price){
-        code = randomNumber();
+        code = RandomNumb.randomNumber();
         this.name = name;
         this.price = price;
         vat = 22;
@@ -22,7 +24,7 @@ public class Product {
 
     public String getName(boolean complete){
         if(complete){
-            return code + "-" + name;
+            return getCode() + "-" + name;
         }
         return name;
     }
@@ -55,11 +57,10 @@ public class Product {
         return "{code=" + code + ",name=" + name + ",price=" + price + ",vat=" + vat + "}";
     }
 
-    private int randomNumber(){
+  /*  private int randomNumber(){
         Random random = new Random();
 
         return random.nextInt(999999) +1;
-    }
-
+    }*/
 
 }

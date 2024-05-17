@@ -1,5 +1,7 @@
 package exercises.exercisesTwo;
 
+import exercises.RandomNumb;
+
 import java.util.Random;
 
 public class BankAccount{
@@ -9,7 +11,7 @@ public class BankAccount{
     private double balance;
 
     BankAccount(String newName){
-        codeBank = randomNumber();
+        codeBank = RandomNumb.randomNumber();
         name = newName;
         balance = 0;
     }
@@ -60,9 +62,9 @@ public class BankAccount{
         return "{code=" + codeBank + ",name=" + name + ",price=" + balance + "}";
     }
 
-    private int randomNumber(){
+  /*  private int randomNumber(){
         Random random = new Random();
         return random.nextInt(1000)+1;
-    }
+    } */
 }
 

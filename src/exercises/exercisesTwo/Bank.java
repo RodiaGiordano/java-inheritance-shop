@@ -11,13 +11,8 @@ public class Bank {
         String name = scanner.nextLine();
 
         BankAccount account = new BankAccount(name);
-       /* System.out.println(account.getBalance());
-        System.out.println(account.getBalance(true));
-        System.out.println(account.getName());
-        account.setName("alessandro");
-        System.out.println(account.getName());
+
         System.out.println(account.getCodeBank());
-        */
         boolean choice = true;
         String result;
         do{
