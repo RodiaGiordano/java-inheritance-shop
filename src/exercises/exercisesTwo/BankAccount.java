@@ -39,8 +39,9 @@ public class BankAccount{
     }
 
     public boolean withdrawal(double withdrawal){
+
         if(withdrawal <= balance){
-           balance -= withdrawal;
+           balance -= checkAmmount(withdrawal);
            return true;
         }else{
             return false;
@@ -49,13 +50,16 @@ public class BankAccount{
 
     public boolean deposit(double deposit){
         if(deposit > 0) {
-        BigDecimal depositValid = new BigDecimal(deposit).setScale(2, RoundingMode.HALF_UP);
-        deposit = depositValid.doubleValue();
-            balance += deposit;
+            balance += checkAmmount(deposit);
             return true;
         }else{
             return false;
         }
+    }
+
+    private double checkAmmount(double ammount){
+        BigDecimal ammountValid = new BigDecimal(ammount).setScale(2, RoundingMode.HALF_UP);
+        return ammountValid.doubleValue();
     }
 
 
