@@ -57,8 +57,8 @@ public class Product {
 
     private int randomNumber(){
         Random random = new Random();
-        int randNumber = random.nextInt(999999);
-        return randNumber > 0 ? randNumber : 1;
+
+        return random.nextInt(999999) +1;
     }
 
 
