@@ -1,11 +1,6 @@
 package exercises.exercisesTwo;
 
-// problemi con la classe BigDecimal e nell valore 0.01 nell'if del prelievo
-
 import exercises.RandomNumb;
-
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 public class BankAccount{
 
@@ -66,22 +61,11 @@ public class BankAccount{
         }
     }
 
- /*  NON sono riuscito ad implementarlo correttamente
-  private double checkAmmount(double ammount){
-        BigDecimal ammountValid = new BigDecimal(ammount).setScale(2, RoundingMode.HALF_UP);
-        return ammountValid.doubleValue();
-    }
-*/
-
 
     @Override
     public String toString(){
         return "{code=" + codeBank + ",name=" + name + ",price=" + balance + "}";
     }
 
-  /*  private int randomNumber(){
-        Random random = new Random();
-        return random.nextInt(1000)+1;
-    } */
 }
 

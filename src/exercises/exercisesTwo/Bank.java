@@ -7,13 +7,6 @@ import java.util.Scanner;
 public class Bank {
     public static void main(String[] args){
 
-/*
-
-        double price = 10.335;
-        BigDecimal bigDecimal = new BigDecimal(price).setScale(2, RoundingMode.HALF_UP);
-        System.out.println(bigDecimal);
- */
-
         int prova2 = 254;
         byte prova = (byte) prova2;
         System.out.println( prova);

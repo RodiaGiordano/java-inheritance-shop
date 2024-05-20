@@ -2,16 +2,14 @@ package exercises.exerciseOne;
 
 import exercises.RandomNumb;
 
-import java.util.Random;
-
 public class Product {
 
-    private int code; //random
-    private String name;
-    private float price;
-    private int vat;
+    protected int code; //random
+    protected String name;
+    protected float price;
+    protected int vat;
 
-    Product(String name, float price){
+    public Product(String name, float price){
         code = RandomNumb.randomNumber();
         this.name = name;
         this.price = price;
@@ -22,18 +20,21 @@ public class Product {
        return String.format("%06d", code);
     }
 
-    public String getName(boolean complete){
-        if(complete){
-            return getCode() + "-" + name;
-        }
-        return name;
+    public String getName(){
+
+      return name;
+
     }
 
+    public String getName(boolean complete){
+        return getCode() + "-" + name;
+    }
+
+
+
     public float getPrice(boolean whitVat){
-        if(whitVat){
-            return price + (price * vat / 100);
-        }
-        return price;
+
+        return price + (price * vat / 100);
     }
 
     public int getVat(){
@@ -52,15 +53,11 @@ public class Product {
         vat = newVat > 0 ? newVat : 22;
     }
 
+
     @Override
     public String toString(){
         return "{code=" + code + ",name=" + name + ",price=" + price + ",vat=" + vat + "}";
     }
 
-  /*  private int randomNumber(){
-        Random random = new Random();
-
-        return random.nextInt(999999) +1;
-    }*/
 
 }
