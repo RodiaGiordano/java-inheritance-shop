@@ -4,26 +4,27 @@ import exercises.exerciseOne.Product;
 
 public class Smartphone extends Product {
 
-    private String imeiCode;
-    private int memory;
-    private String storageUnit;
+    protected String imeiCode;
+    public int memory;
+    protected String storageUnit;
 
-    public Smartphone(String name, float price,String _imeiCode, int _memory, String _storageUnit){
-        super(name, price);
+    public Smartphone(String name, float price,String _imeiCode, int _memory, String _storageUnit,boolean loyaltyCard){
+        super(name, price, loyaltyCard);
         imeiCode = checkImeiCode(_imeiCode);
         memory = checkMemory(_memory);
         storageUnit = _storageUnit;
+
     }
 
-    public Smartphone(String name, float price,String _imeiCode, int _memory){
-        super(name, price);
+    public Smartphone(String name, float price,String _imeiCode, int _memory,boolean loyaltyCard){
+        super(name, price, loyaltyCard);
         imeiCode = checkImeiCode(_imeiCode).toUpperCase();
         memory = _memory;
         storageUnit = "N.D.";
     }
 
-    public Smartphone(String name, float price,String _imeiCode){
-        super(name, price);
+    public Smartphone(String name, float price,String _imeiCode,boolean loyaltyCard){
+        super(name, price, loyaltyCard);
         imeiCode = checkImeiCode(_imeiCode);
         storageUnit = "N.D.";
     }

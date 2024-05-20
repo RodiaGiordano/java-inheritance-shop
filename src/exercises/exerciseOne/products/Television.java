@@ -4,14 +4,14 @@ import exercises.exerciseOne.MakeDecFormat;
 import exercises.exerciseOne.Product;
 
 public class Television extends Product {
-    private boolean smartTv;
-    private double width;
-    private double height;
-    private double depth;
-    String screenSizeIn;
+    public boolean smartTv;
+    protected double width;
+    protected double height;
+    protected double depth;
+    protected String screenSizeIn;
 
-    public Television(String name, float price, boolean smartTv, double width, double height, double depth, String screenSizeIn){
-        super(name, price);
+    public Television(String name, float price, boolean smartTv, double width, double height, double depth, String screenSizeIn, boolean loyaltyCard){
+        super(name, price, loyaltyCard);
         this.smartTv = smartTv;
         this.width = checkMeasures(width, 'x');
         this.height = checkMeasures(height, 'y');
@@ -19,8 +19,8 @@ public class Television extends Product {
         this.screenSizeIn = checkScreenMeasures(screenSizeIn);
     }
 
-    public Television(String name, float price, boolean smartTv, String screenSizeIn){
-        super(name, price);
+    public Television(String name, float price, boolean smartTv, String screenSizeIn, boolean loyaltyCard){
+        super(name, price, loyaltyCard);
         this.smartTv = smartTv;
         this.screenSizeIn = checkScreenMeasures(screenSizeIn);
 

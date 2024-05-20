@@ -4,18 +4,18 @@ import exercises.exerciseOne.Product;
 
 public class Headphones extends Product {
 
-    private String color;
-    private String type;
+    protected String color;
+    public String type;
 
-    public Headphones(String name, float price, String color, String type){
-        super(name, price);
+    public Headphones(String name, float price, String color, String type,boolean loyaltyCard){
+        super(name, price, loyaltyCard);
         this.color = checkColor(color);
         this.type =type;
 
     }
 
-    public Headphones(String name, float price){
-        super(name,price);
+    public Headphones(String name, float price,boolean loyaltyCard){
+        super(name,price,loyaltyCard);
         this.color ="N.D.";
         this.type = "N.D.";
     }

@@ -13,6 +13,14 @@ public class Cart {
 
 
         boolean addProduct = true;
+        System.out.println("Hai una tessera fedeltà? si/no");
+        String loyaltyCarduser = scanner.nextLine().toLowerCase();
+        boolean loyaltyCard;
+        if(loyaltyCarduser.equals("si")){
+            loyaltyCard = true;
+        }else{
+            loyaltyCard = false;
+        }
         System.out.println("quanti prodotti vuoi inserire?");
         int counter = Integer.parseInt(scanner.nextLine());
         Product[] productArray = new Product[counter];
@@ -23,12 +31,12 @@ public class Cart {
             String productType = scanner.nextLine().toLowerCase();
             switch (productType){
                 case "tv":
-                    productArray[i] = new Television("samsungTv", 5500, true, 50, 50,2,"45");
+                    productArray[i] = new Television("samsungTv", 5500, true, 50, 50,2,"45", loyaltyCard);
                     break;
                 case "smartphone":
-                    productArray[i] = new Smartphone("Samsung Galaxy", 800, "490154203237518", 256, "gb");
+                    productArray[i] = new Smartphone("Samsung Galaxy", 800, "490154203237518", 256, "gb", loyaltyCard);
                 case "cuffie":
-                    productArray[i] = new Headphones("cuffie", 18, "blu", "wireless");
+                    productArray[i] = new Headphones("cuffie", 18, "blu", "wireless", loyaltyCard);
             }
         }
         scanner.close();
