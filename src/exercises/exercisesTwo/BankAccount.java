@@ -34,8 +34,9 @@ public class BankAccount{
 
     public void setName(String newName){
         name = newName.length() > 0 ? newName : name;
-    }
 
+
+    }
     public String getBalance(boolean format){
         String balance = Double.toString(getBalance());
         int dotIndex = balance.indexOf(".");

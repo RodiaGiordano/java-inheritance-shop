@@ -8,11 +8,15 @@ public class Bank {
     public static void main(String[] args){
 
 /*
+
         double price = 10.335;
         BigDecimal bigDecimal = new BigDecimal(price).setScale(2, RoundingMode.HALF_UP);
         System.out.println(bigDecimal);
  */
 
+        int prova2 = 254;
+        byte prova = (byte) prova2;
+        System.out.println( prova);
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("inserisci il tuo nome");
@@ -21,6 +25,9 @@ public class Bank {
         BankAccount account = new BankAccount(name);
 
         boolean choice = true;
+
+
+
         String result;
         do{
             System.out.println("Scegli tra: " + "prelievo,deposito o esci");
